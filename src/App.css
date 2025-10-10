@@ -1,38 +1,197 @@
-.App {
+/* src/App.css - Updated for Darker, Speckled Hazel Green Theme */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #1a1a1a; /* Dark background like a black cat's fur */
+  color: #f0f0f0; /* Light text for contrast */
+  margin: 0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #2c2c2c; /* Slightly lighter dark for the card */
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+}
+
+.app-header {
   text-align: center;
+  border-bottom: 2px solid #444; /* Darker border */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Adjusted green: Darker, more yellowish green */
+.app-header h1 {
+  color: #7a9c3b; /* Darker, yellowish green */
+  margin: 0;
+  /* Simulating speckles with multiple text shadows */
+  text-shadow: 
+    0 0 4px rgba(188, 188, 70, 0.6), /* Yellow speckle glow */
+    0 0 8px rgba(122, 156, 59, 0.8); /* Main green glow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.date-picker-container {
+  margin-top: 15px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px; /* Space between elements */
+}
+
+.nav-arrow {
+  background-color: #7a9c3b; /* Darker, yellowish green for interaction */
   color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-arrow:hover {
+  background-color: #92b45a; /* Lighter hover for the new green */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#date-picker {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #555; /* Darker border for input */
+  background-color: #3a3a3a; /* Dark background for input */
+  color: #f0f0f0; /* Light text for input */
+  font-size: 16px;
+}
+
+/* Style for the date picker icon/calendar dropdown to match theme */
+#date-picker::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert color for visibility on dark background */
+}
+
+
+.allergy-form h2 {
+  text-align: center;
+  color: #7a9c3b; /* Darker, yellowish green */
+  margin-bottom: 25px;
+  /* Simulating speckles with text shadow */
+  text-shadow: 
+    0 0 2px rgba(188, 188, 70, 0.4), /* Yellow speckle glow */
+    0 0 5px rgba(122, 156, 59, 0.6); /* Main green glow */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #e0e0e0; /* Slightly lighter text for labels */
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333; /* Darker background for toggle group */
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555; /* Dark grey for off state */
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #7a9c3b; /* Darker, yellowish green for on state */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7a9c3b;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7a9c3b; /* Darker, yellowish green for button */
+  color: #1a1a1a; /* Dark text on green button */
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+  /* Simulating speckles with box shadow */
+  /* box-shadow: 
+    0 0 5px rgba(188, 188, 70, 0.4), /* Yellow speckle glow */
+    /* 0 0 10px rgba(122, 156, 59, 0.6); Main green glow */ */
+/* } */
+
+.submit-button:hover {
+  background-color: #92b45a; /* Lighter hover for the new green */
+  box-shadow: 
+    0 0 8px rgba(188, 188, 70, 0.6), /* Stronger yellow speckle glow */
+    0 0 15px rgba(122, 156, 59, 0.8); /* Stronger main green glow */
 }
