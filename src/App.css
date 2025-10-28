@@ -37,10 +37,11 @@ body {
   padding: 10vmin;
   display: inline-block;
   background: radial-gradient(ellipse 20% 125%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%),
-              radial-gradient(circle, #2a2f28 0%, #4a5244 30%, #6b7261 60%, #8a9080 100%);
+              radial-gradient(circle, #1a1a1a 0%, #3a4a3a 25%, #5a6a52 50%, #7a8a6a 75%, #9aaa82 100%);
   border-radius: 0 100%;
   overflow: hidden;
 }
+
 
 .eye + .eye {
   border-radius: 100% 0%;
