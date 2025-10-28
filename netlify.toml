@@ -1,0 +1,16 @@
+# This file tells Netlify how to build and deploy your site.
+
+[build]
+  # This is the command to build your React application.
+  command = "npm run build"
+  # This is the directory that contains the built site.
+  publish = "build"
+
+# This rule is crucial for single-page applications (like React).
+# It ensures that any direct navigation to a page (e.g., /about)
+# is handled by your app's client-side router.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
