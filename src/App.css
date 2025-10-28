@@ -18,19 +18,58 @@ body {
 
 .app-header {
   text-align: center;
-  border-bottom: 2px solid #444; /* Darker border */
+  border-bottom: 2px solid #303030; /* Darker border */
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
 /* Adjusted green: Darker, more yellowish green */
 .app-header h1 {
-  color: #7a9c3b; /* Darker, yellowish green */
+  color: linear-gradient(to right, #7FFF00, #B87333);
   margin: 0;
   /* Simulating speckles with multiple text shadows */
   text-shadow: 
-    0 0 4px rgba(188, 188, 70, 0.6), /* Yellow speckle glow */
-    0 0 8px rgba(122, 156, 59, 0.8); /* Main green glow */
+    0 0 4px rgb(138, 176, 68), /* Yellow speckle glow */
+}
+.app-header h1, .eye {
+  display: inline-block;
+  vertical-align: middle; /* Align them nicely in the middle */
+}
+.eye {
+  position: relative;
+  margin: 5vmin 5vmin 5vmin 5vmin;
+  padding: 10vmin;
+  display: inline-block;
+  background: radial-gradient(ellipse 20% 125%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 40%),
+              radial-gradient(circle, #2a2f28 0%, #4a5244 30%, #6b7261 60%, #8a9080 100%);
+  border-radius: 0 100%;
+  overflow: hidden;
+}
+
+.eye + .eye {
+  border-radius: 100% 0%;
+}
+
+/* Eyelid pseudo-element */
+.eye::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background: #2c2c2c;
+  z-index: 10;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    height: 0%;
+  }
+  92%, 98% {
+    height: 100%;
+  }
 }
 
 .date-picker-container {
@@ -62,6 +101,7 @@ body {
   border: 1px solid #555; /* Darker border for input */
   background-color: #3a3a3a; /* Dark background for input */
   color: #f0f0f0; /* Light text for input */
+  color: #f0f0f0; /* White text for contrast */
   font-size: 16px;
 }
 

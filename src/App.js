@@ -25,10 +25,10 @@ function App() {
       console.log('Fetched data:', data);
       
       // Optionally populate form with fetched data if available
-      // setHadAllergies(data.hadAllergies || false);
-      // setHadCough(data.hadCough || false);
-      // setFoodEaten(data.foodEaten || '');
-      // setAllergens(data.allergens || []);
+      setHadAllergies(data?.has_allergies || false);
+      setHadCough(data?.has_cough || false);
+      setFoodEaten(data?.food ? data.food.join(', ') : '');
+      setAllergens(data?.allergens ? Object.keys(data.allergens) : []);
       
       setIsLoading(false);
     };
@@ -72,6 +72,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
+        <div className='eye' />
         <h1>Mushi's Allergy Tracker</h1>
         <div className="date-picker-container">
           <button onClick={goToPreviousDay} className="nav-arrow">&lt;</button>
